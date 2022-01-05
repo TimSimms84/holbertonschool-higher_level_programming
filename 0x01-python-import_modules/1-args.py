@@ -11,9 +11,8 @@ def argvprint(argv):
     else:
         print("{} arguments:".format(j - 1))
         for i in range(len(sys.argv)):
-            if i == 0:
-                continue
-            print("{}: {}".format(i, str(sys.argv[i])))
+            if i != 0:
+                print("{}: {}".format(i, str(sys.argv[i])))
 
 if __name__ == '__main__':
     import sys
