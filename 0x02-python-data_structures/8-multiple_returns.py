@@ -3,6 +3,6 @@
 
 def multiple_returns(sentence):
     if len(sentence) == 0:
-        return 4, 'N'
+        return 0, 'N'
     else:
         return len(sentence), sentence[0]
