@@ -1,11 +1,12 @@
 #!/usr/bin/python3
 
 
-def no_c(my_string):
+def no_c(my_list):
     no_c = "C,c"
+    new_string = my_list[:]
 
     for character in no_c:
-        my_string = my_string.replace(character, "")
-        return my_string
+        new_string = new_string.replace(character, "")
+        return new_string
     else:
-        return my_string
+        return new_string
