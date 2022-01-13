@@ -1,8 +1,12 @@
 #!/usr/bin/python3
-"""Unittest for max_integer 
 """
+Unittest for max_integer
+"""
+
+
 import unittest
 max_integer = __import__('6-max_integer').max_integer
+
 
 class TestMaxInteger(unittest.TestCase):
     """
@@ -33,12 +37,9 @@ class TestMaxInteger(unittest.TestCase):
 
     def test_invalid(self):
         self.assertRaises(TypeError, max_integer, [6, "hi mom", 7],
-            msg="unorderable types: str() > int()")
+                          msg="unorderable types: str() > int()")
         self.assertRaises(TypeError, max_integer, [4, 0, "7"],
-            msg="unorderable types: str() > int()")
-
-
-
+                          msg="unorderable types: str() > int()")
 
 if __name__ == "__main__":
     unittest.main()
