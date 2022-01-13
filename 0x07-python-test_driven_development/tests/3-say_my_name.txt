@@ -1,0 +1,26 @@
+Try importing function from module:
+	>>> say_my_name = __import__("3-say_my_name").say_my_name
+
+Try not a string for first:
+	>>> say_my_name(12, "Hope")
+	Traceback (most recent call last):
+	TypeError: first_name must be a string
+
+
+Try not a string for last:
+	>>> say_my_name("Bob", 12)
+	Traceback (most recent call last):
+	TypeError: last_name must be a string
+
+Try two empty strings
+	>>> say_my_name("", "")
+	My name is  
+
+Try no last name:
+	>>> say_my_name("Billy", "")
+	My name is Billy 
+
+Try more than 2 args:
+	 >>> say_my_name("Bob", "Hope", "Hi Mom")
+	 Traceback (most recent call last):
+	 TypeError: say_my_name() takes from 1 to 2 positional arguments but 3 were given

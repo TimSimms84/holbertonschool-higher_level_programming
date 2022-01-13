@@ -1,0 +1,19 @@
+Try importing function from module:
+	>>> text_indentation = __import__("5-text_indentation").text_indentation
+
+
+Try no string:
+    >>> text_indentation(42)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+Try no extralinebreaks
+    >>> text_indentation("I like cheese")
+    I like cheese
+
+QA case:
+    >>> text_indentation("Burger? I barely know her.")
+    Burger?
+    <BLANKLINE>
+    I barely know her.
+    <BLANKLINE>
