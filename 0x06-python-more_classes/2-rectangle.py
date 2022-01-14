@@ -67,11 +67,10 @@ class Rectangle:
         print the rectangle with the character #
         """
         string = ""
-        if self.__width != 0 or self.__height != 0:
+        if self.__width != 0 and self.__height != 0:
             for i in range(self.height):
                 for j in range(self.width):
                     string += '#'
-                if i != self.__height -1:
+                if i != self.__height - 1:
                     string += '\n'
         return string
-
