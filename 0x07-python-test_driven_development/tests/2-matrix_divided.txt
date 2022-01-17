@@ -36,3 +36,13 @@ Try Zero div:
 try overflow float:
     >>> matrix_divided(matrix, float('inf'))
     [[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
+
+Try missing one argument:
+    >>> matrix_divided(matrix)
+    Traceback (most recent call last):
+    TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+Try missing two arguments:
+    >>> matrix_divided()
+    Traceback (most recent call last):
+    TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
