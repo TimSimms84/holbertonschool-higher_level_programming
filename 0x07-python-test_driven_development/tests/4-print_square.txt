@@ -20,3 +20,6 @@ Try float:
 	>>> print_square(.5)
 	Traceback (most recent call last):
 	TypeError: size must be an integer
+
+Try Size is integer equal to 0:
+    >>> print_square(0)
