@@ -8,6 +8,8 @@ matrix_divided:
 """
 
 list_error = "matrix must be a matrix (list of lists) of integers/floats"
+
+
 def matrix_divided(matrix, div):
     """
     Checks if matrix is a list
