@@ -11,7 +11,7 @@ Try normal matrix with int div
 Try None Matrix:
 	>>> matrix_divided(None, 3)
 	Traceback (most recent call last):
-	TypeError: matrix must be a matrix (list of lists) of integers/floats
+	TypeError: "matrix must be a matrix (list of lists) of integers/floats"
 
 Try None div:
 	>>> matrix_divided(matrix, None)
@@ -21,7 +21,7 @@ Try None div:
 Try matrix is a list:
 	>>> matrix_divided("Hi Mom", 3)
 	Traceback (most recent call last):
-	TypeError: matrix must be a matrix (list of lists) of integers/floats
+	TypeError: "matrix must be a matrix (list of lists) of integers/floats"
 
 Try diff sizes:
 	>>> matrix_divided([[1, 2, 3], [4, 5]], 3)
@@ -33,3 +33,6 @@ Try Zero div:
     Traceback (most recent call last):
     ZeroDivisionError: division by zero
 
+Try overfloat float:
+	>>> matrix_divided(matrix, float('inf'))
+    [[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
