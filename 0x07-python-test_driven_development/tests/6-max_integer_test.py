@@ -37,6 +37,13 @@ class TestMaxInteger(unittest.TestCase):
 
     def test_invalid(self):
         self.assertRaises(TypeError, max_integer((6, 7)))
+            def test_positive_integers(self):
+        """
+        This function tests max_integer with positive integers.
+        """
+        self.assertEqual(max_integer([1, 2, 3]), 3)
+        self.assertEqual(max_integer([1, 3, 2]), 3)
+        self.assertEqual(max_integer([3, 1, 2]), 3)
 
 
 if __name__ == "__main__":
