@@ -11,7 +11,7 @@ Try no extralinebreaks
     >>> text_indentation("I like cheese")
     I like cheese
 
-QA case:
+Try line break case:
     >>> text_indentation("Burger? I barely know her.")
     Burger?
     <BLANKLINE>

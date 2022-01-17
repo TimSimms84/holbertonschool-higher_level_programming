@@ -36,10 +36,8 @@ class TestMaxInteger(unittest.TestCase):
         self.assertIs(list, list)
 
     def test_invalid(self):
-        self.assertRaises(TypeError, max_integer, [6, "hi mom", 7],
-                          msg="unorderable types: str() > int()")
-        self.assertRaises(TypeError, max_integer, [4, 0, "7"],
-                          msg="unorderable types: str() > int()")
+        self.assertRaises(TypeError, max_integer((6, 7)))
+
 
 if __name__ == "__main__":
     unittest.main()
