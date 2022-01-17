@@ -43,6 +43,6 @@ Try missing two arguments:
     TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
 
 Try matrix is a list:
-	>>> matrix_divided("Hi Mom", 3)
+	>>> matrix_divided("hi mom", 3)
 	Traceback (most recent call last):
-	TypeError: "matrix must be a matrix (list of lists) of integers/floats"
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
