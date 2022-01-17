@@ -33,6 +33,3 @@ Try Zero div:
     Traceback (most recent call last):
     ZeroDivisionError: division by zero
 
-Try overfloat float:
-	>>> matrix_divided(matrix, float('inf'))
-    [[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
