@@ -1,0 +1,47 @@
+=====================================
+Unit test for module 1-my_list.py
+=====================================
+
+Import module
+=============
+::
+    >>> MyList = __import__("1-my_list").MyList
+
+-----------------------------------------------------
+::
+
+Checking for mod docstring:
+	>>> m = __import__("1-my_list").__doc__
+    >>> len(m) > 1
+    True
+
+Checking for class docstring:
+	>>> c = __import__("1-my_list").MyList.__doc__
+	>>> len(c) > 1
+	True
+
+
+Checking for empty list:
+	>>> list = MyList()
+	>>> list.print_sorted()
+	[]
+
+
+Try Appending:
+    >>> list.append(1)
+	>>> list.append(2)
+	>>> list.append(3)
+	>>> list.append(4)
+	>>> print(list)
+	[1, 2, 3, 4]
+
+Try Reverse list:
+	>>> list = MyList()
+	>>> list.append(4)
+	>>> list.append(3)
+	>>> list.append(2)
+	>>> list.append(1)
+	>>> print(list)
+	[4, 3, 2, 1]
+	>>> list.print_sorted()
+	[1, 2, 3, 4]
