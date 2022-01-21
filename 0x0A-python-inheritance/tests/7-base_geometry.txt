@@ -80,3 +80,7 @@ Try type errors:
 	>>> a.integer_validator("bool", True)
 	Traceback (most recent call last):
 	TypeError: bool must be an integer
+
+	>>> a.integer_validator("dict", {"key": "value"})
+	Traceback (most recent call last):
+	TypeError: dict must be an integer
