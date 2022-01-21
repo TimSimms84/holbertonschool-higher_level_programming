@@ -21,7 +21,7 @@ class Student:
         new_dict = {}
         for i in attrs:
             try:
-                new_dict[i] = self.__dict__[i]
+                new_dict[i] = vars(self)[i]
             except Exception:
                 pass
         return new_dict
