@@ -16,7 +16,7 @@ class Student:
     def to_json(self, attrs=None):
         """ dictionary representation of a Student instance
          """
-        if not attrs:
+        if attrs is None:
             return vars(self)
         new_dict = {}
         for i in attrs:
