@@ -4,7 +4,7 @@ Student class that defines a student by public: firstname, listname, age
 """
 
 
-class Student():
+class Student:
     """
     Student class
     """
@@ -15,12 +15,12 @@ class Student():
 
     def to_json(self, attrs=None):
         """ dictionary representation of a Student instance """
-        if attrs:
-            new_dict = {}
-            for i in attrs:
-                try:
-                    new_dict[i] = vars(self)[i]
-                except Exception:
-                    pass
-            return new_dict
-        return vars(self)
+        if not attrs:
+            return vars(self)
+        new_dict = {}
+        for i in attrs:
+            try:
+                new_dict[i] = vars(self)[i]
+            except Exception:
+                pass
+        return new_dict
