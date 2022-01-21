@@ -4,9 +4,6 @@ Student class that defines a student by public: firstname, listname, age
 """
 
 
-from attr import attrs
-
-
 class Student():
     """
     Student class
