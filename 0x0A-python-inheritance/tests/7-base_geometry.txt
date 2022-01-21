@@ -32,11 +32,6 @@ Try integer is < 0:
 	...
 	ValueError: integer must be greater than 0
 
-Try a string:
-	>>> a.integer_validator("string", "hello")
-	Traceback (most recent call last):
-	TypeError: string must be an integer
-
 Try no argument:
 	>>> a.integer_validator()
 	Traceback (most recent call last):
@@ -69,3 +64,11 @@ Checking for class docstring:
 	>>> len(c) > 1
 	True
 
+Try type errors:
+	>>> a.integer_validator("string", "hello")
+	Traceback (most recent call last):
+	TypeError: string must be an integer
+
+	>>> a.integer_validator("float", "9.5")
+	Traceback (most recent call last):
+	TypeError: float must be an integer
