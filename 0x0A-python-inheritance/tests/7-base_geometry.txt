@@ -37,13 +37,12 @@ Try integer is < 0:
 Try no argument:
 	>>> a.integer_validator()
 	Traceback (most recent call last):
-    TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+	TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
 
 Try 1 argument to integer_validatord:
-	 >>> a.integer_validator("integer")
-	 Traceback (most recent call last):
-	 ...
-	 TypeError: integer_validator() missing 1 required positional argument: 'value'
+	>>> a.integer_validator("integer")
+	Traceback (most recent call last):
+	TypeError: integer_validator() missing 1 required positional argument: 'value'
 
 Checking for too many arguments:
 	 >>> a.integer_validator("integer", 1, 2)
