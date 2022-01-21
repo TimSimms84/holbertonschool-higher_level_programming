@@ -81,4 +81,9 @@ Try type errors:
 	Traceback (most recent call last):
 	TypeError: list must be an integer
 
+	>>> a.integer_validator("bool", True)
+	Traceback (most recent call last):
+	TypeError: bool must be an integer
+
+
 
