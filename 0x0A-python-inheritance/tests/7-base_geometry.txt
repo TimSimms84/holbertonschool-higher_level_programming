@@ -34,6 +34,11 @@ Try integer is < 0:
 	...
 	ValueError: integer must be greater than 0
 
+Try no argument:
+	>>> a.integer_validator()
+	Traceback (most recent call last):
+    TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
 Try 1 argument to integer_validatord:
 	 >>> a.integer_validator("integer")
 	 Traceback (most recent call last):
