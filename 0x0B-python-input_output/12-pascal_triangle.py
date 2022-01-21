@@ -12,7 +12,7 @@ def pascal_triangle(n):
     if n <= 0:
         return triangle
     for i in range(n):
-        sum = 11 ** i
-        tri = [j for j in str(sum)]
+        angle = 11 ** i
+        tri = [j for j in str(angle)]
         triangle.append(tri)
     return triangle
