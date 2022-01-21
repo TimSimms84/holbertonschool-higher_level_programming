@@ -14,7 +14,6 @@ Try area:
 	>>> a = BaseGeo()
 	>>> a.area()
 	Traceback (most recent call last):
-	...
 	Exception: area() is not implemented
 
 Try too many arguments for area:
@@ -25,7 +24,6 @@ Try too many arguments for area:
 Try integer is 0:
 	>>> a.integer_validator("integer", 0)
 	Traceback (most recent call last):
-	...
 	ValueError: integer must be greater than 0
 
 Try integer is < 0:
@@ -33,6 +31,11 @@ Try integer is < 0:
 	Traceback (most recent call last):
 	...
 	ValueError: integer must be greater than 0
+
+Try a string:
+	>>> a.integer_validator("string", "hello")
+	Traceback (most recent call last):
+	TypeError: string must be an integer
 
 Try no argument:
 	>>> a.integer_validator()
@@ -54,6 +57,7 @@ Try good case:
 	>>> a.integer_validator("integer", 98)
 	>>> a.integer_validator("width", 98)
 	>>> a.integer_validator("age", 1)
+	>>> a.integer_validator(1, 1)
 
 Checking for mod docstring:
 	>>> m = __import__("7-base_geometry").__doc__
