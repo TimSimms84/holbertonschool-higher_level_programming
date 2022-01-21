@@ -49,3 +49,13 @@ Checking for too many arguments:
 Try good case:
 	>>> a.integer_validator("integer", 98)
 	>>> a.integer_validator("width", 98)
+
+Checking for mod docstring:
+	>>> m = __import__("7-base_geometry").__doc__
+    >>> len(m) > 1
+    True
+
+Checking for class docstring:
+	>>> c = __import__("7-base_geometry").MyList.__doc__
+	>>> len(c) > 1
+	True
