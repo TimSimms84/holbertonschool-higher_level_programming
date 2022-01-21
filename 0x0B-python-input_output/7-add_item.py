@@ -13,7 +13,7 @@ filename = "add_item.json"
 try:
     json_list = load_json(filename)
 
-except(TypeError, ValueError):
+except(TypeError, FileNotFoundError):
     json_list = []
 
 for i in sys.argv[1:]:
