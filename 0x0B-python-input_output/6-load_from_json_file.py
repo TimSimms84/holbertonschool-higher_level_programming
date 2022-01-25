@@ -1,17 +1,14 @@
 #!/usr/bin/python3
 """
- Returns the dictionary description with simple data structure
- (list, dictionary, string, integer and boolean) for JSON serialization
-  of an object:
+ writes an Object to a text file, using a JSON representation:
 """
 
 import json
 
 
-def class_to_json(obj):
+def load_from_json_file(filename):
     """
-     Returns the dictionary description with simple data structure
-     (list, dictionary, string, integer and boolean) for JSON serialization
-     of an object:
+     writes an Object to a text file, using a JSON representation:
     """
-    return obj.__dict__
+    with open(filename, "r", encoding="utf-8") as my_file:
+        return json.load(my_file)
