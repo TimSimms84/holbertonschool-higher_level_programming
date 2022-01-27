@@ -14,7 +14,9 @@ class Rectangle(Base):
         super().__init__(id)
 
     def to_dictionary(self):
-        """Returns a dictionary rep of a rectangle"""
+        """
+        Returns a dictionary rep of a rectangle
+        """
         return {'id': self.id, 'width': self.width, 'height': self.height,
                 'x': self.x, 'y': self.y}
 
@@ -25,6 +27,9 @@ class Rectangle(Base):
  - {self.__width}/{self.__height}"
 
     def update(self, *args, **kwargs):
+        """
+        updates attributes
+        """
         attrs, i = ['id', 'width', 'height', 'x', 'y'], 0
         if args:
             for value in args:
@@ -34,12 +39,17 @@ class Rectangle(Base):
             setattr(self, key, value)
 
     def display(self):
+        """displays using #
+        """
         for i in range(self.y):
             print()
         for j in range(self.height):
             print("{}{}".format(" " * self.x, "#" * self.width))
 
     def area(self):
+        """
+        Returns: area of object
+        """
         return self.__width * self.__height
 
     @property
