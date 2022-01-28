@@ -57,11 +57,12 @@ class Base:
         """
         filename = cls.__name__ + ".json"
         jstring = []
-        if list_objs is not None:
-            for i in list_objs:
-                jstring.append(cls.to_dictionary(i))
         with open(filename, "w") as file:
-            file.write(cls.to_json_string(jstring))
+            if list_objs is None:
+                file.write("[]")
+            else:
+                jstring = [i.to_dictionary() for i in list_objs]
+                file.write(Base.to_json_string(jstring))
 
     @classmethod
     def load_from_file(cls):
