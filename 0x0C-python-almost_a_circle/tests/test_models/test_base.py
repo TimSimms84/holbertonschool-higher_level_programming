@@ -14,11 +14,6 @@ class TestBaseClass(unittest.TestCase):
     Test Base Class
     """
 
-    @classmethod
-    def setUpClass(cls):
-        """Set up for the doc tests"""
-        cls.base_funcs = inspect.getmembers(Base, inspect.isfunction)
-
     def test_pep8_base(self):
         """
         Test that models/base.py is pep8 compliant.
@@ -52,8 +47,12 @@ class TestBaseClass(unittest.TestCase):
         """
         Tests for the presence of docstrings in all functions
         """
-        for functions, i in self.base_funcs:
-            self.assertTrue(len(functions[i].__doc__) >= 1)
+        self.assertTrue(len(Base.__init__.__doc__) >= 1)
+        self.assertTrue(len(Base.to_json_string.__doc__) >= 1)
+        self.assertTrue(len(Base.from_json_string.__doc__) >= 1)
+        self.assertTrue(len(Base.save_to_file.__doc__) >= 1)
+        self.assertTrue(len(Base.create.__doc__) >= 1)
+        self.assertTrue(len(Base.load_from_file.__doc__) >= 1)
 
     def test_to_json_string(self):
         """Tests regular to json string"""
