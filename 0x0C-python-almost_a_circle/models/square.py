@@ -11,13 +11,21 @@ class Square(Rectangle):
     Square class
     """
     def __init__(self, size, x=0, y=0, id=None):
+        """
+        init method
+        """
         super().__init__(size, size, x, y, id)
 
     def to_dictionary(self):
-        """Returns a dictionary rep of a square"""
+        """
+        Returns a dictionary rep of a square
+        """
         return {'id': self.id, 'size': self.size, 'x': self.x, 'y': self.y}
 
     def update(self, *args, **kwargs):
+        """
+        updates attributes
+        """
         attrs, i = ['id', 'size', 'x', 'y'], 0
         if args:
             for value in args:
@@ -34,10 +42,15 @@ class Square(Rectangle):
 
     @property
     def size(self):
-        """size getter"""
+        """
+        size getter
+        """
         return self.width
 
     @size.setter
     def size(self, value):
+        """
+        size setter
+        """
         self.width = value
         self.height = value
