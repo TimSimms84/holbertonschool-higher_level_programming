@@ -31,8 +31,9 @@ class Square(Rectangle):
             for value in args:
                 setattr(self, attrs[i], value)
                 i += 1
-        for key, value in kwargs.items():
-            setattr(self, key, value)
+        else:
+            for key in kwargs:
+                setattr(self, key, kwargs[key])
 
     def __str__(self):
         """custom __str__ method for Square
@@ -52,5 +53,5 @@ class Square(Rectangle):
         """
         size setter
         """
-        self.width = value
-        self.height = value
+        self.width = self.hw_validator("width", value)
+        self.height = self.hw_validator("width", value)
