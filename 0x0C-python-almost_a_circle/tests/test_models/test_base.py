@@ -70,6 +70,14 @@ class TestBaseClass(unittest.TestCase):
         self.assertTrue(type(json_s) is str)
         self.assertEqual(json_s, "[]")
 
+    def test_fjs_empty(self):
+        """Tests from_json_string with an empty string"""
+        self.assertEqual([], Base.from_json_string(""))
+
+    def test_fjs_None(self):
+        """Tests from_json_string with an empty string"""
+        self.assertEqual([], Base.from_json_string(None))
+
     def test_None_to_json_String(self):
         json_s = Base.to_json_string(None)
         self.assertTrue(type(json_s) is str)
@@ -91,17 +99,21 @@ class TestBaseClass(unittest.TestCase):
 
 
 class NewTest(unittest.TestCase):
-    def test_id_sets(self):
+    def test_no_id_set(self):
         """
         Tests no passed ID
         Passed id
         then no passed ID again
         """
         b1 = Base()
-        b98 = Base(98)
-        b2 = Base()
         self.assertEqual(b1.id, 1)
+
+    def test_id_set(self):
+        b98 = Base(98)
         self.assertEqual(b98.id, 98)
+
+    def test_no_id_set_2(self):
+        b2 = Base()
         self.assertEqual(b2.id, 2)
 
     def test_too_many_args(self):
@@ -111,13 +123,17 @@ class NewTest(unittest.TestCase):
         with self.assertRaises(TypeError):
             b = Base(1, 1)
 
-    def test_fjs_empty(self):
-        """Tests from_json_string with an empty string"""
-        self.assertEqual([], Base.from_json_string(""))
+    def test_nb_public(self):
+        """Tests nb_objects as a private instance attribute"""
+        b = Base(3)
+        with self.assertRaises(AttributeError):
+            print(b.nb_objects)
 
-    def test_fjs_None(self):
-        """Tests from_json_string with an empty string"""
-        self.assertEqual([], Base.from_json_string(None))
+    def test_nb_private(self):
+        """Tests nb_objects as a private instance attribute"""
+        b = Base(4)
+        with self.assertRaises(AttributeError):
+            print(b.__nb_objects)
 
 
 if __name__ == "__main__":
