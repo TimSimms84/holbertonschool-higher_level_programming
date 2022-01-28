@@ -2,15 +2,20 @@
 """
 rectangle that inhertis from Base class
 """
+
+
 from models.base import Base
 
 
 class Rectangle(Base):
+    """
+    Rectangle class that inherits from Base
+    """
     def __init__(self, width, height, x=0, y=0, id=None):
-        self.__width = self.hw_validator("width", width)
-        self.__height = self.hw_validator("height", height)
-        self.__x = self.xy_validator("x", x)
-        self.__y = self.xy_validator("y", y)
+        self.width = self.hw_validator("width", width)
+        self.height = self.hw_validator("height", height)
+        self.x = self.xy_validator("x", x)
+        self.y = self.xy_validator("y", y)
         super().__init__(id)
 
     def to_dictionary(self):
@@ -54,6 +59,8 @@ class Rectangle(Base):
 
     @property
     def width(self):
+        """width getter
+        """
         return self.__width
 
     @width.setter
