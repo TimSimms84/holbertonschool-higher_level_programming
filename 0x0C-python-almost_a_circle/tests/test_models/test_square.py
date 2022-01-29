@@ -268,5 +268,70 @@ class TestSquare_y(unittest.TestCase):
             Square(5, 1, -1)
 
 
+class TestSquare_area(unittest.TestCase):
+    """Unittests for testing the area method of the Square class."""
+
+    def test_area_small(self):
+        self.assertEqual(100, Square(10, 0, 0, 1).area())
+
+    def test_area_large(self):
+        s = Square(999999999999999999, 0, 0, 1)
+        self.assertEqual(999999999999999998000000000000000001, s.area())
+
+    def test_area_changed_attributes(self):
+        s = Square(2, 0, 0, 1)
+        s.size = 7
+        self.assertEqual(49, s.area())
+
+    def test_area_one_arg(self):
+        s = Square(2, 10, 1, 1)
+        with self.assertRaises(TypeError):
+            s.area(1)
+
+
+class TestSquare_to_dictionary(unittest.TestCase):
+    """Unittests for testing to_dictionary method of the Square class."""
+
+    def test_to_dictionary_output(self):
+        s = Square(10, 2, 1, 1)
+        correct = {'id': 1, 'x': 2, 'size': 10, 'y': 1}
+        self.assertDictEqual(correct, s.to_dictionary())
+
+    def test_to_dictionary_no_object_changes(self):
+        s1 = Square(10, 2, 1, 2)
+        s2 = Square(1, 2, 10)
+        s2.update(**s1.to_dictionary())
+        self.assertNotEqual(s1, s2)
+
+    def test_to_dictionary_arg(self):
+        s = Square(10, 10, 10, 10)
+        with self.assertRaises(TypeError):
+            s.to_dictionary(1)
+
+
+class TestSquare_update_kwargs(unittest.TestCase):
+    """Unittests for testing update kwargs method of Square class."""
+
+    def test_update_kwargs_one(self):
+        s = Square(10, 10, 10, 10)
+        s.update(id=1)
+        self.assertEqual("[Square] (1) 10/10 - 10", str(s))
+
+    def test_update_kwargs_two(self):
+        s = Square(10, 10, 10, 10)
+        s.update(size=1, id=2)
+        self.assertEqual("[Square] (2) 10/10 - 1", str(s))
+
+    def test_update_kwargs_three(self):
+        s = Square(10, 10, 10, 10)
+        s.update(y=1, size=3, id=89)
+        self.assertEqual("[Square] (89) 10/1 - 3", str(s))
+
+    def test_update_kwargs_four(self):
+        s = Square(10, 10, 10, 10)
+        s.update(id=89, x=1, y=3, size=4)
+        self.assertEqual("[Square] (89) 1/3 - 4", str(s))
+
+
 if __name__ == "__main__":
     unittest.main()
