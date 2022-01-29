@@ -105,6 +105,8 @@ class NewTest(unittest.TestCase):
         s2 = Square(10, 0, 0, 12)
         self.assertEqual(s2.id, 12)
 
+
+class SizeTest(unittest.TestCase):
     def test_None_size(self):
         with self.assertRaisesRegex(TypeError, "width must be an integer"):
             Square(None)
@@ -148,6 +150,122 @@ class NewTest(unittest.TestCase):
     def test_nan_size(self):
         with self.assertRaisesRegex(TypeError, "width must be an integer"):
             Square(float('nan'))
+
+    def test_nan_size(self):
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            Square(float('nan'))
+
+    def test_negative_size(self):
+        with self.assertRaisesRegex(ValueError, "width must be > 0"):
+            Square(-1, 2)
+
+    def test_zero_size(self):
+        with self.assertRaisesRegex(ValueError, "width must be > 0"):
+            Square(0, 2)
+
+
+class TestSquare_x(unittest.TestCase):
+    """Unittests for testing initialization of Square x attribute."""
+
+    def test_None_x(self):
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
+            Square(1, None)
+
+    def test_str_x(self):
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
+            Square(1, "invalid")
+
+    def test_float_x(self):
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
+            Square(1, 5.5)
+
+    def test_complex_x(self):
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
+            Square(1, complex(5))
+
+    def test_dict_x(self):
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
+            Square(1, {"a": 1, "b": 2}, 2)
+
+    def test_bool_x(self):
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
+            Square(1, True)
+
+    def test_list_x(self):
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
+            Square(1, [1, 2, 3])
+
+    def test_set_x(self):
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
+            Square(1, {1, 2, 3})
+
+    def test_tuple_x(self):
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
+            Square(1, (1, 2, 3))
+
+    def test_inf_x(self):
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
+            Square(1, float('inf'), 2)
+
+    def test_nan_x(self):
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
+            Square(1, float('nan'), 2)
+
+    def test_negative_x(self):
+        with self.assertRaisesRegex(ValueError, "x must be >= 0"):
+            Square(5, -1, 0)
+
+
+class TestSquare_y(unittest.TestCase):
+    """Unittests for testing initialization of Square y attribute."""
+
+    def test_None_x(self):
+        with self.assertRaisesRegex(TypeError, "y must be an integer"):
+            Square(1, 1, None)
+
+    def test_str_y(self):
+        with self.assertRaisesRegex(TypeError, "y must be an integer"):
+            Square(1, 1, "string")
+
+    def test_float_y(self):
+        with self.assertRaisesRegex(TypeError, "y must be an integer"):
+            Square(1, 1, 5.5)
+
+    def test_complex_y(self):
+        with self.assertRaisesRegex(TypeError, "y must be an integer"):
+            Square(1, 1, complex(5))
+
+    def test_dict_y(self):
+        with self.assertRaisesRegex(TypeError, "y must be an integer"):
+            Square(1, 2, {"a": 1, "b": 2})
+
+    def test_bool_y(self):
+        with self.assertRaisesRegex(TypeError, "y must be an integer"):
+            Square(1, 1, True)
+
+    def test_list_y(self):
+        with self.assertRaisesRegex(TypeError, "y must be an integer"):
+            Square(1, 1, [1, 2, 3])
+
+    def test_set_y(self):
+        with self.assertRaisesRegex(TypeError, "y must be an integer"):
+            Square(1, 1, {1, 2, 3})
+
+    def test_tuple_y(self):
+        with self.assertRaisesRegex(TypeError, "y must be an integer"):
+            Square(1, 1, (1, 2, 3))
+
+    def test_inf_y(self):
+        with self.assertRaisesRegex(TypeError, "y must be an integer"):
+            Square(1, 1, float('inf'))
+
+    def test_nan_x(self):
+        with self.assertRaisesRegex(TypeError, "y must be an integer"):
+            Square(1, 1, float('nan'))
+
+    def test_negative_y(self):
+        with self.assertRaisesRegex(ValueError, "y must be >= 0"):
+            Square(5, 1, -1)
 
 
 if __name__ == "__main__":
