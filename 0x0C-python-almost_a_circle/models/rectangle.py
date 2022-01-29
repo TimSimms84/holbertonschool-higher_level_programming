@@ -12,6 +12,9 @@ class Rectangle(Base):
     Rectangle class that inherits from Base
     """
     def __init__(self, width, height, x=0, y=0, id=None):
+        """
+        init method
+        """
         self.width = self.hw_validator("width", width)
         self.height = self.hw_validator("height", height)
         self.x = self.xy_validator("x", x)
