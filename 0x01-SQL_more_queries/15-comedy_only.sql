@@ -1,5 +1,5 @@
 -- list all Comedy shows in the database
-select shows.title FROM tv_shows AS shows
+SELECT shows.title FROM tv_shows AS shows
 JOIN tv_show_genres AS tvshowgenre
 ON shows.id = tvshowgenre.show_id
 JOIN tv_genres AS genres
