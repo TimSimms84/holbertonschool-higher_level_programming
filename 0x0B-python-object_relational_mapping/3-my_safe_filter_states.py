@@ -1,25 +1,26 @@
 #!/usr/bin/python3
+"""
+takes in an argument and displays all values in the
+states table of hbtn_0e_0_usa where name matches the argument.
+without sql injection
+"""
 
 import MySQLdb
 
 
 def print_n_state():
     from sys import argv
-    if len(argv) == 5:
-        db = MySQLdb.connect(host="localhost", port=3306, user=argv[1],
-                             passwd=argv[2], database=argv[3])
+    db = MySQLdb.connect(host="localhost", port=3306, user=argv[1],
+                         passwd=argv[2], database=argv[3])
 
-        cursor = db.cursor()
+    cursor = db.cursor()
 
-        cursor.execute("SELECT * FROM states WHERE name LIKE %s", (argv[4],))
-        for rows in cursor.fetchall():
-            if rows[1] == (argv[4],):
-                print(rows)
+    cursor.execute("SELECT * FROM states WHERE name LIKE %s", (argv[4],))
+    for rows in cursor.fetchall():
+        print(rows)
 
-        cursor.close()
-        db.close()
-    else:
-        return
+    cursor.close()
+    db.close()
 
 
 if __name__ == "__main__":
