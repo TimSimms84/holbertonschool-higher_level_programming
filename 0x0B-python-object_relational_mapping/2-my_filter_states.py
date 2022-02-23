@@ -11,13 +11,13 @@ def print_n_state():
     db = MySQLdb.connect(host="localhost", port=3306, user=argv[1],
                          passwd=argv[2], database=argv[3])
 
-    cursor = db.cursor()
+    cur = db.cursor()
 
-    cursor.execute("SELECT * FROM states WHERE name LIKE %s", (argv[4],))
-    for rows in cursor.fetchall():
+    cur.execute("SELECT * FROM states WHERE name LIKE %s", [format(argv[4])])
+    for rows in cur.fetchall():
         print(rows)
 
-    cursor.close()
+    cur.close()
     db.close()
 
 
