@@ -13,10 +13,9 @@ def print_n_state():
 
     cursor = db.cursor()
 
-    cursor.execute("SELECT * FROM states")
+    cursor.execute("SELECT * FROM states WHERE name LIKE %s", (argv[4],))
     for rows in cursor.fetchall():
-        if rows[1] == argv[4]:
-            print(rows)
+        print(rows)
 
     cursor.close()
     db.close()
