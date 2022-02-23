@@ -13,7 +13,8 @@ def print_n_state():
 
     cur = db.cursor()
 
-    cur.execute("SELECT * FROM states WHERE name LIKE %s", [format(argv[4])])
+    cur.execute("SELECT * FROM states WHERE name LIKE\
+        %s ORDER BY states.id", [format(argv[4])])
     for rows in cur.fetchall():
         print(rows)
 
