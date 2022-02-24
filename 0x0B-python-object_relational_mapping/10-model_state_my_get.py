@@ -19,6 +19,6 @@ if __name__ == "__main__":
     if item:
         print("{}".format(item.id))
     else:
-        print("Not Found")
+        print("Not found")
 
     session.close()
