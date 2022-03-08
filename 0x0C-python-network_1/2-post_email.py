@@ -4,7 +4,7 @@ script that fetches https://intranet.hbtn.io/status
 """
 
 
-def hbtn_header():
+def hbtn_post():
     from urllib.request import Request, urlopen
     from urllib.parse import urlencode
     from sys import argv
@@ -17,4 +17,4 @@ def hbtn_header():
 
 
 if __name__ == "__main__":
-    hbtn_header()
+    hbtn_post()

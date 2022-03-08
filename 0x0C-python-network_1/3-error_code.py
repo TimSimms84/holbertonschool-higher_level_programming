@@ -4,7 +4,7 @@ script that fetches https://intranet.hbtn.io/status
 """
 
 
-def hbtn_header():
+def hbtn_error():
     """"""
     from urllib.request import Request, urlopen
     from urllib.error import HTTPError
@@ -20,4 +20,4 @@ def hbtn_header():
 
 
 if __name__ == "__main__":
-    hbtn_header()
+    hbtn_error()
