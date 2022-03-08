@@ -8,7 +8,7 @@ def hbtn_header():
     from urllib.request import Request, urlopen
     from sys import argv
     """gets status of hbtn intranet"""
-    request = Request("https://intranet.hbtn.io/status")
+    request = Request(argv[1])
     with urlopen(request) as webpage:
         header = webpage.info()
         print(header['X-Request-Id'])
