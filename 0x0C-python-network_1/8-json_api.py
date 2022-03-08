@@ -19,7 +19,7 @@ def json_api():
         id = dic.get('id')
         name = dic.get('name')
         if len(dic) == 0:
-            print("No Results")
+            print("No result")
         else:
             print("[{}] {}".format(id, name))
 
