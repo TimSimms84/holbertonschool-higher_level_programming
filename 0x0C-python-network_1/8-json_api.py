@@ -4,19 +4,16 @@ script that fetches https://intranet.hbtn.io/status
 """
 
 
-from distutils.log import error
-from logging import exception
-
-
 def json_api():
     """"""
     from requests import get, post
     from sys import argv
-    if len(argv) <= 1:
+    if len(argv) < 2:
         q = ""
-    elif len(argv) == 2:
+    else:
         q = argv[1]
-    request = post('http://0.0.0.0:5000/search_user', data={'q': q})
+    site = 'http://0.0.0.0:5000/search_user'
+    request = post(site, data={'q': q})
     try:
         dic = request.json()
         id = dic.get('id')
@@ -24,7 +21,7 @@ def json_api():
         if len(dic) == 0 or not id or not name:
             print("No Results")
         else:
-            print("[{}] {}".format(dic.get('id'), dic.get('name')))
+            print("[{}] {}".format(name, id))
 
     except:
         print("Not a valid JSON")
