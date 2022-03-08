@@ -11,9 +11,9 @@ def hbtn_status():
         print("Body response:")
         print("\t- type: {}".format(type(webpage)))
         print("\t- content: {}".format(webpage))
-        print("\t- utf8 content: {}".format(webpage.decode('utf8'))
+        print("\t- utf8 content: {}".format(webpage.decode('utf8')))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     from urllib.request import Request, urlopen
     hbtn_status()
