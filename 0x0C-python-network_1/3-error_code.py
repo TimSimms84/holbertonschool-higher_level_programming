@@ -9,7 +9,7 @@ def hbtn_header():
     from urllib.parse import urlencode
     from sys import argv
     """gets status of hbtn intranet"""
-    request = Request(argv[1], data)
+    request = Request(argv[1])
     with urlopen(request) as webpage:
         print(webpage.read().decode("utf-8"))
 
