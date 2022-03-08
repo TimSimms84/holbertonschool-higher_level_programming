@@ -18,10 +18,10 @@ def json_api():
         dic = request.json()
         id = dic.get('id')
         name = dic.get('name')
-        if len(dic) == 0 or not id or not name:
+        if len(dic) == 0:
             print("No Results")
         else:
-            print("[{}] {}".format(name, id))
+            print("[{}] {}".format(id, name))
 
     except:
         print("Not a valid JSON")
