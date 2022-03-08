@@ -11,7 +11,7 @@ def hbtn_header():
     from sys import argv
     """gets status of hbtn intranet"""
     request = Request(argv[1])
-    try:        
+    try:     
         with urlopen(request) as webpage:
             webpage = webpage.read()
             print(webpage.decode("utf-8"))
