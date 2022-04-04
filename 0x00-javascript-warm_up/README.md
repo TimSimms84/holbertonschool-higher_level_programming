@@ -1,0 +1,1 @@
+First introduction into Javascript!
