@@ -1,7 +1,7 @@
 #!/usr/bin/node
 
 function add (a, b) {
-  let c = Number(a) + Number(b);
+  const c = Number(a) + Number(b);
   return c;
 }
 
