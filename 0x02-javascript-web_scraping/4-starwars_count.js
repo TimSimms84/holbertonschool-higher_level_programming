@@ -11,7 +11,7 @@ request(website, function (error, response, body) {
     for (const movies in jsonReturn) {
       const characters = jsonReturn[movies].characters;
       for (const charIndex in characters) {
-        if (characters[charIndex].includes('18')) {
+        if (characters[charIndex].includes('/18/')) {
           wedgeApperance += 1;
         }
       }
