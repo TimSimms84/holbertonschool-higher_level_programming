@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Pascal's Triangle using Magic 11s
+Pascal's Triangle not using Magic 11s
 """
 
 
