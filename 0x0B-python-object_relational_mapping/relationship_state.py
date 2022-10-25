@@ -11,7 +11,6 @@ from sqlalchemy.orm import relationship
 Base = declarative_base()
 
 
-
 class State(Base):
     """
     Creates the State class
@@ -20,5 +19,3 @@ class State(Base):
     id = Column(Integer, primary_key=True)
     name = Column(String(128), nullable=False)
     cities = relationship('City', backref='State')
-
-
